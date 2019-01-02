@@ -1,0 +1,148 @@
+
+.container{
+  margin: 0 10%;
+  font-family: $marvel;
+  color: $body-copy;
+  line-height: px-to-em(30);
+  font-size: px-to-em(20);
+  @include desktop{
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+.grid__row{
+  padding: 2em 0;
+  text-align: left;
+  &>.theme__colors{
+    margin-bottom: 0.5em;
+  }
+  @include desktop{
+    @include flexbox;
+    text-align: center;
+  }
+}
+
+.card .link{
+    @extend %links;
+  }
+
+.card{
+  text-align: justify;
+  // @include desktop{
+  //   padding-right: 3em;
+  // }
+  p{
+    margin: 0;
+    @include desktop{
+      line-height: 1.5em;
+    }
+  }
+}
+
+.headline--secondary{
+  @extend %headings;
+}
+
+.headline--primary{
+  font-family: $secular;
+  color: $h1-color;
+  text-align: left;
+  width: px-to-em(150);
+  margin-left: 1em;
+  font-size: 1.4em;
+  @include desktop{
+    width: 100%;
+  }
+}
+
+.blockquote{
+  border-left: 10px solid $h1-color;
+  padding: 0 2em;
+  font-weight: 500;
+  font-family: $quicksand;
+  border-radius: 8px;
+}
+
+
+
+
+.img--frame{
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  border: 1px solid $border-color;
+  @include desktop{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+$color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4, 3: $col-3 );
+
+.grid__row:nth-of-type(n+6){
+  padding: 0;
+  @each $num, $color in $color-map {
+  & .grid__col--#{$num} {
+        background: #{$color};
+      }
+    }
+}
+
+@for $i from 6 through 11 {
+  .grid__row:nth-of-type(#{$i}){
+    @extend %marginBot;
+  }
+}
+
+@media (min-width: $desktop-width){
+
+  .grid__row:nth-of-type(1){
+    .grid__col--3{
+      margin-right: auto;
+    }
+  }
+
+  .grid__col--8{
+    flex-basis: 66%;
+  }
+
+  .grid__col--6{
+    flex-basis: 49%;
+  }
+
+  .grid__col--4{
+    flex-basis: 32%;
+  }
+
+  .grid__col--3{
+    flex-basis: 23.5%;
+  }
+
+  .grid__col--5{
+    flex-basis: 39%;
+  }
+
+  .grid__col--7{
+    flex-basis: 59%;
+  }
+
+  .grid__col--12{
+    flex-basis: 100%;
+    @include flexbox;
+  }
+
+  .theme__colors{
+    width: 180px;
+  }
+
+  .btn--default[type="submit"]{
+    width: 100%;
+  }
+
+  .centered{
+    margin: 0 auto;
+  }
+
+}

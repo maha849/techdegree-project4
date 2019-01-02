@@ -1,0 +1,25 @@
+
+// ****** Media Queries ******//
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// ****** Flexbox ******//
+
+@mixin flexbox{
+  display: flex;
+  justify-content: space-between;
+}
+
+// ****** Unit convertion ******//
+
+@function px-to-pc($unit, $total:480){
+  @return ($unit/$total)*100%;
+}
+
+@function px-to-em($unit, $base:16){
+  @return ($unit/$base)*1em;
+}

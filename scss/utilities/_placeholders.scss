@@ -1,0 +1,45 @@
+%marginBot{
+  margin-bottom: 3em;
+}
+
+// ****** links ******//
+
+%links{
+  text-decoration: none;
+  color: $link-color;
+  display: inline;
+  font-weight: 700;
+}
+
+// ****** Images ******//
+
+%images{
+  display: block;
+  margin: 1em auto;
+}
+
+// ****** Headlines ******//
+
+%headings{
+  text-align: left;
+  margin: 2em 0;
+  font-weight: normal;
+  font-family: $quicksand;
+}
+
+// ****** Nav Items ******//
+
+%nav-items{
+  display: block;
+  text-decoration: none;
+  line-height: px-to-em(50);
+  color: $nav-clr;
+  font-family: $quicksand;
+  font-weight: 500;
+  font-size: px-to-em(20);
+  &:hover{
+    background: $h1-color;
+    border-radius: 5px;
+    color: $nav-hvr;
+  }
+}

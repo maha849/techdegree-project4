@@ -1,0 +1,26 @@
+
+.nav{
+  margin-top: 1em;
+  text-align: center;
+  @include desktop{
+    @include flexbox;
+    margin: 0;
+    align-items: center;
+    height: 94px;
+    }
+  }
+
+.nav a{
+    @extend %nav-items;
+    @include desktop{
+      font-size: 1em;
+      line-height: 1.5em;
+      display: inline-block;
+      padding: 0.5em;
+      &:hover{
+        background: $h1-color;
+        border-radius: 5px;
+        color: $nav-hvr;
+      }
+    }
+  }

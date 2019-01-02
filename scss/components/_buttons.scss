@@ -1,0 +1,20 @@
+.theme__colors{
+  display: block;
+  width: 100%;
+  background: $login-color;
+  border-radius: 8px;
+  border: none;
+  padding: 0.7em;
+  color: $nav-hvr;
+  font-family: $quicksand;
+  font-size: 0.8em;
+  line-height: 1.25em;
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+
+@each $name, $value in $color-map {
+  .btn--#{$name} {
+    background: $value;
+  }
+}

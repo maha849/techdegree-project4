@@ -1,0 +1,39 @@
+
+// ****** fonts ******//
+
+$quicksand: 'Quicksand', sans-serif;
+$secular: 'Secular One', sans-serif;
+$marvel: 'Marvel', sans-serif;
+
+// ****** Breakpoints ******//
+
+$desktop-width: 1400px;
+
+// ****** Colors ******//
+
+$nav-clr: #747474;
+$nav-hvr: #fff;
+$body-copy: #828282;
+$h1-color: #58e1c1;
+$link-color: #65e1fc;
+$login-color: #51ddfc;
+$border-color: #cdcdcd;
+$btn-success: #63cc82;
+$btn-error: #e4757a;
+$btn-warn: #fd7856;
+$btn-info: #927bc1;
+
+$col-12: #80e8d1;
+$col-6: #3fabca;
+$col-4: #7ee6fd;
+$col-3: #deb2ee;
+$col-5: #88d9a0;
+$col-7: #ec9fa3;
+$col-8: #fd9f85;
+
+$color-map: (
+    success: $btn-success,
+    error: $btn-error,
+    warn: $btn-warn,
+    info: $btn-info
+);
