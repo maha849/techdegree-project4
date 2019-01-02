@@ -102,12 +102,6 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
 
 @media (min-width: $desktop-width){
 
-  .grid__row:nth-of-type(1){
-    .grid__col--3{
-      margin-right: auto;
-    }
-  }
-
   .grid__col--12{
     flex: 1;
     @include flexbox;
@@ -130,6 +124,12 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
   .centered{
     margin: 0 auto;
     color: $col-color;
+  }
+
+  [class^=grid__col] {
+    & + & {
+      margin-left : .5em;
+    }
   }
 
 }
