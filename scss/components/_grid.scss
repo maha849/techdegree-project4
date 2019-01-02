@@ -13,7 +13,7 @@
 
 .grid__row{
   padding: 2em 0;
-  text-align: left;
+  @extend %left-align;
   &>.theme__colors{
     margin-bottom: 0.5em;
   }
@@ -23,21 +23,22 @@
   }
 }
 
-.card .link{
-    @extend %links;
-  }
-
 .card{
   text-align: justify;
-  // @include desktop{
-  //   padding-right: 3em;
-  // }
+  @include desktop{
+    .grid__col--8 &{
+      padding-right: 2em;
+    }
+  }
   p{
     margin: 0;
     @include desktop{
-      line-height: 1.5em;
+      line-height: 1.6em;
     }
   }
+  .link{
+      @extend %links;
+    }
 }
 
 .headline--secondary{
@@ -47,9 +48,9 @@
 .headline--primary{
   font-family: $secular;
   color: $h1-color;
-  text-align: left;
+  @extend %left-align;
   width: px-to-em(150);
-  margin-left: 1em;
+  margin-left: 0.5em;
   font-size: 1.4em;
   @include desktop{
     width: 100%;
@@ -63,9 +64,6 @@
   font-family: $quicksand;
   border-radius: 8px;
 }
-
-
-
 
 .img--frame{
   display: block;
@@ -86,13 +84,19 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
   @each $num, $color in $color-map {
   & .grid__col--#{$num} {
         background: #{$color};
+        justify-content: center;
       }
     }
-}
+  }
 
 @for $i from 6 through 11 {
   .grid__row:nth-of-type(#{$i}){
-    @extend %marginBot;
+    margin-bottom: 3em;
+    & [class^="grid__col"]{
+      @include desktop{
+        color: $col-color;
+      }
+    }
   }
 }
 
@@ -104,37 +108,19 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
     }
   }
 
-  .grid__col--8{
-    flex-basis: 66%;
-  }
-
-  .grid__col--6{
-    flex-basis: 49%;
-  }
-
-  .grid__col--4{
-    flex-basis: 32%;
-  }
-
-  .grid__col--3{
-    flex-basis: 23.5%;
-  }
-
-  .grid__col--5{
-    flex-basis: 39%;
-  }
-
-  .grid__col--7{
-    flex-basis: 59%;
-  }
-
   .grid__col--12{
-    flex-basis: 100%;
+    flex: 1;
     @include flexbox;
   }
 
   .theme__colors{
     width: 180px;
+  }
+
+  @for $i from 3 through 9 {
+    .grid__col--#{$i}{
+      flex: #{$i};
+    }
   }
 
   .btn--default[type="submit"]{
@@ -143,6 +129,7 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
 
   .centered{
     margin: 0 auto;
+    color: $col-color;
   }
 
 }

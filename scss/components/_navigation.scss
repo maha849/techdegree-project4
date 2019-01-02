@@ -4,9 +4,10 @@
   text-align: center;
   @include desktop{
     @include flexbox;
-    margin: 0;
+    margin: 0 0 0 auto;
     align-items: center;
     height: 94px;
+    width: 60%;
     }
   }
 
