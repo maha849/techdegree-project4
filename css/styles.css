@@ -617,6 +617,14 @@ ul, ol {
 .grid__row > .theme__colors {
   margin-bottom: 0.5em;
 }
+.grid__row:last-of-type {
+  margin-bottom: 3em;
+}
+@media (min-width: 1400px) {
+  .grid__row:last-of-type {
+    margin-bottom: 5em;
+  }
+}
 @media (min-width: 1400px) {
   .grid__row {
     display: flex;
@@ -681,31 +689,24 @@ ul, ol {
 }
 .grid__row:nth-of-type(n+6) .grid__col--12 {
   background: #80e8d1;
-  justify-content: center;
 }
 .grid__row:nth-of-type(n+6) .grid__col--8 {
   background: #fd9f85;
-  justify-content: center;
 }
 .grid__row:nth-of-type(n+6) .grid__col--7 {
   background: #ec9fa3;
-  justify-content: center;
 }
 .grid__row:nth-of-type(n+6) .grid__col--6 {
   background: #3fabca;
-  justify-content: center;
 }
 .grid__row:nth-of-type(n+6) .grid__col--5 {
   background: #88d9a0;
-  justify-content: center;
 }
 .grid__row:nth-of-type(n+6) .grid__col--4 {
   background: #7ee6fd;
-  justify-content: center;
 }
 .grid__row:nth-of-type(n+6) .grid__col--3 {
   background: #deb2ee;
-  justify-content: center;
 }
 
 .grid__row:nth-of-type(6) {
@@ -714,6 +715,7 @@ ul, ol {
 @media (min-width: 1400px) {
   .grid__row:nth-of-type(6) [class^=grid__col] {
     color: #808080;
+    justify-content: center;
   }
 }
 
@@ -723,6 +725,7 @@ ul, ol {
 @media (min-width: 1400px) {
   .grid__row:nth-of-type(7) [class^=grid__col] {
     color: #808080;
+    justify-content: center;
   }
 }
 
@@ -732,6 +735,7 @@ ul, ol {
 @media (min-width: 1400px) {
   .grid__row:nth-of-type(8) [class^=grid__col] {
     color: #808080;
+    justify-content: center;
   }
 }
 
@@ -741,6 +745,7 @@ ul, ol {
 @media (min-width: 1400px) {
   .grid__row:nth-of-type(9) [class^=grid__col] {
     color: #808080;
+    justify-content: center;
   }
 }
 
@@ -750,6 +755,7 @@ ul, ol {
 @media (min-width: 1400px) {
   .grid__row:nth-of-type(10) [class^=grid__col] {
     color: #808080;
+    justify-content: center;
   }
 }
 
@@ -759,14 +765,21 @@ ul, ol {
 @media (min-width: 1400px) {
   .grid__row:nth-of-type(11) [class^=grid__col] {
     color: #808080;
+    justify-content: center;
+  }
+}
+
+.grid__row:nth-of-type(12) {
+  margin-bottom: 3em;
+}
+@media (min-width: 1400px) {
+  .grid__row:nth-of-type(12) [class^=grid__col] {
+    color: #808080;
+    justify-content: center;
   }
 }
 
 @media (min-width: 1400px) {
-  .grid__row:nth-of-type(1) .grid__col--3 {
-    margin-right: auto;
-  }
-
   .grid__col--12 {
     flex: 1;
     display: flex;
@@ -809,9 +822,9 @@ ul, ol {
     width: 100%;
   }
 
-  .centered {
+  .grid__col--7.centered {
+    max-width: 60%;
     margin: 0 auto;
-    color: #808080;
   }
 
   [class^=grid__col] + [class^=grid__col] {

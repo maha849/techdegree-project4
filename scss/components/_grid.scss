@@ -17,11 +17,19 @@
   &>.theme__colors{
     margin-bottom: 0.5em;
   }
+  &:last-of-type{
+    margin-bottom: 3em;
+    @include desktop{
+      margin-bottom: 5em;
+    }
+  }
   @include desktop{
     @include flexbox;
     text-align: center;
   }
 }
+
+
 
 .card{
   text-align: justify;
@@ -41,9 +49,12 @@
     }
 }
 
+
+
 .headline--secondary{
   @extend %headings;
 }
+
 
 .headline--primary{
   font-family: $secular;
@@ -57,6 +68,7 @@
   }
 }
 
+
 .blockquote{
   border-left: 10px solid $h1-color;
   padding: 0 2em;
@@ -64,6 +76,7 @@
   font-family: $quicksand;
   border-radius: 8px;
 }
+
 
 .img--frame{
   display: block;
@@ -77,6 +90,7 @@
   }
 }
 
+
 $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4, 3: $col-3 );
 
 .grid__row:nth-of-type(n+6){
@@ -84,21 +98,23 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
   @each $num, $color in $color-map {
   & .grid__col--#{$num} {
         background: #{$color};
-        justify-content: center;
       }
     }
   }
 
-@for $i from 6 through 11 {
+
+@for $i from 6 through 12 {
   .grid__row:nth-of-type(#{$i}){
     margin-bottom: 3em;
     & [class^="grid__col"]{
       @include desktop{
         color: $col-color;
+        justify-content: center;
       }
     }
   }
 }
+
 
 @media (min-width: $desktop-width){
 
@@ -121,12 +137,12 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
     width: 100%;
   }
 
-  .centered{
-    margin: 0 auto;
-    color: $col-color;
-  }
+.grid__col--7.centered {
+  max-width: 60%;
+  margin: 0 auto;
+}
 
-  [class^=grid__col] {
+[class^=grid__col] {
     & + & {
       margin-left : .5em;
     }
