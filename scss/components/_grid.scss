@@ -116,7 +116,7 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
 }
 
 
-@media (min-width: $desktop-width){
+@include desktop{
 
   .grid__col--12{
     flex: 1;
@@ -137,15 +137,15 @@ $color-map: (12: $col-12, 8: $col-8, 7: $col-7, 6: $col-6, 5: $col-5, 4: $col-4,
     width: 100%;
   }
 
-.grid__col--7.centered {
-  max-width: 60%;
-  margin: 0 auto;
-}
-
-[class^=grid__col] {
-    & + & {
-      margin-left : .5em;
-    }
+  .grid__col--7.centered {
+    max-width: 60%;
+    margin: 0 auto;
   }
 
+  [class^=grid__col] {
+      & + & {
+        margin-left : .5em;
+      }
+    }
+    
 }
